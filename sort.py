@@ -1,7 +1,7 @@
 from copy import deepcopy
 from functools import reduce
-from util import timeit, get_random_list
 import logging
+from util import timeit, get_random_list
 
 
 @timeit
