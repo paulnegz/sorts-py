@@ -67,9 +67,9 @@ def quick_sort(unordered_list :list)->list:
             return unordered_list
         
         pivot = unordered_list.pop(0)
-        is_positive = lambda x: x>pivot
-        left_list = [x for x in unordered_list if not is_positive(x)]
-        right_list = [x for x in unordered_list if is_positive(x)]
+        is_bigger = lambda x: x>pivot
+        left_list = [x for x in unordered_list if not is_bigger(x)]
+        right_list = [x for x in unordered_list if is_bigger(x)]
 
         left, right = quick_sort_rec(left_list), quick_sort_rec(right_list)
         return [*left, pivot, *right]
