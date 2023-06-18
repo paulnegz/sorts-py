@@ -17,11 +17,11 @@ def bubble_sort(unordered_list :list)->list:
 
 @timeit
 def selection_sort(unordered_list :list)->list:
-    for index_y in range(len(unordered_list)):
+    for index_y, list_item in enumerate(unordered_list):
         min_index = index_y
         for index in range(index_y,len(unordered_list)):
             if unordered_list[index] < unordered_list[min_index]: min_index = index
-        unordered_list[min_index], unordered_list[index_y] = unordered_list[index_y], unordered_list[min_index]
+        unordered_list[min_index], list_item = list_item, unordered_list[min_index]
     return unordered_list
 
 
@@ -71,7 +71,6 @@ def quick_sort(unordered_list :list)->list:
         is_bigger = lambda x: x>pivot
         left_list = [x for x in unordered_list if not is_bigger(x)]
         right_list = [x for x in unordered_list if is_bigger(x)]
-
         left, right = quick_sort_rec(left_list), quick_sort_rec(right_list)
         return [*left, pivot, *right]
     return quick_sort_rec(unordered_list)
@@ -98,7 +97,6 @@ def tim_sort(unordered_list :list)->list:
     bucket_outter=[[] for _ in range(run_index+1)]
     for index, item in enumerate(unordered_list):
         bucket_outter[index//run_size].append(item)
-        
     bucket = list(map(lambda inner_bucket: insertion_sort_rec(inner_bucket), bucket_outter))
     return merge(*bucket) 
 
@@ -135,4 +133,3 @@ if __name__ == "__main__":
     # print(quick_sort(deepcopy(random_list)))
     # print(radix_sort(deepcopy(random_list)))
     # print(tim_sort(deepcopy(random_list)))
-    # print(python_sort(deepcopy(random_list)))
