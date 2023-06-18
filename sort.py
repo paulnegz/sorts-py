@@ -17,11 +17,11 @@ def bubble_sort(unordered_list :list)->list:
 
 @timeit
 def selection_sort(unordered_list :list)->list:
-    for index_y, list_item in enumerate(unordered_list):
+    for index_y, _ in enumerate(unordered_list):
         min_index = index_y
         for index in range(index_y,len(unordered_list)):
             if unordered_list[index] < unordered_list[min_index]: min_index = index
-        unordered_list[min_index], list_item = list_item, unordered_list[min_index]
+        unordered_list[min_index], unordered_list[index_y] = unordered_list[index_y], unordered_list[min_index]
     return unordered_list
 
 
