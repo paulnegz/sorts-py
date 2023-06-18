@@ -85,7 +85,7 @@ def radix_sort(unordered_list :list)->list:
         for item in unordered_list:
             bucket[item//base**n %base].append(item)
         n+=1
-        unordered_list = reduce(lambda acc, current: acc+current, bucket)
+        unordered_list = reduce(lambda acc, current: [*acc,*current], bucket)
     return unordered_list
 
 
@@ -123,11 +123,11 @@ if __name__ == "__main__":
     tim_sort(deepcopy(random_list))
     python_sort(deepcopy(random_list))
 
-    # assert bubble_sort(deepcopy(random_list)) == selection_sort(deepcopy(random_list))
-    # assert insertion_sort(deepcopy(random_list)) == merge_sort(deepcopy(random_list))
-    # assert merge_sort(deepcopy(random_list)) == quick_sort(deepcopy(random_list))
-    # assert quick_sort(deepcopy(random_list)) == radix_sort(deepcopy(random_list))
-    # assert radix_sort(deepcopy(random_list)) == tim_sort(deepcopy(random_list))
+    assert bubble_sort(deepcopy(random_list)) == selection_sort(deepcopy(random_list))
+    assert insertion_sort(deepcopy(random_list)) == merge_sort(deepcopy(random_list))
+    assert merge_sort(deepcopy(random_list)) == quick_sort(deepcopy(random_list))
+    assert quick_sort(deepcopy(random_list)) == radix_sort(deepcopy(random_list))
+    assert radix_sort(deepcopy(random_list)) == tim_sort(deepcopy(random_list))
     # print(bubble_sort(deepcopy(random_list)))
     # print(selection_sort(deepcopy(random_list)))
     # print(insertion_sort(deepcopy(random_list)))
