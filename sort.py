@@ -82,7 +82,7 @@ def radix_sort(unordered_list :list)->list:
     while n<=max_length:
         bucket=[[] for _ in range(base)]
         for item in unordered_list:
-            bucket[item//base**n %10].append(item)
+            bucket[item//base**n %base].append(item)
         n+=1
         unordered_list = reduce(lambda acc, current: acc+current, bucket)
     return unordered_list
