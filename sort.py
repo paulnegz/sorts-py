@@ -1,6 +1,6 @@
 from copy import deepcopy
 from functools import reduce
-from util import timeit, get_random_list
+from util import timeit, get_random_list, merge
 
 
 @timeit
@@ -50,23 +50,12 @@ def merge_sort(unordered_list :list)->list:
     return merge_sort_rec(unordered_list)
 
 
-def merge(left :list, *args)->list:
-    if len(args) < 1:  return left
-
-    merged, right = [], args[0]
-    if len(args) > 1: return merge(merge(left, right), *args[1:])
-    
-    while len(left) and len(right):
-        merged.append(left.pop(0)) if left[0] < right[0] else merged.append(right.pop(0))
-    return [*merged, *right, *left]
-
-
 @timeit
 def quick_sort(unordered_list :list)->list:
     def quick_sort_rec(unordered_list :list)->list:
         if len(unordered_list)<=1: return unordered_list
         
-        pivot = unordered_list.pop(0)
+        pivot = unordered_list.pop()
         is_bigger = lambda x: x>pivot
         left_list = [x for x in unordered_list if not is_bigger(x)]
         right_list = [x for x in unordered_list if is_bigger(x)]
@@ -108,24 +97,15 @@ if __name__ == "__main__":
     WIDTH = 4000
     random_list = get_random_list(WIDTH)
     print(f"Sorting list with {WIDTH} elements...")
-    bubble_sort(deepcopy(random_list))
-    selection_sort(deepcopy(random_list))
-    insertion_sort(deepcopy(random_list))
-    merge_sort(deepcopy(random_list))
-    quick_sort(deepcopy(random_list))
-    radix_sort(deepcopy(random_list))
-    tim_sort(deepcopy(random_list))
-    python_sort(deepcopy(random_list))
+    bubble_result = bubble_sort(deepcopy(random_list))
+    selection_result = selection_sort(deepcopy(random_list))
+    insertion_result = insertion_sort(deepcopy(random_list))
+    merge_result = merge_sort(deepcopy(random_list))
+    quick_result = quick_sort(deepcopy(random_list))
+    radix_result = radix_sort(deepcopy(random_list))
+    tim_result = tim_sort(deepcopy(random_list))
+    python_result = python_sort(deepcopy(random_list))
 
-    assert bubble_sort(deepcopy(random_list)) == selection_sort(deepcopy(random_list))
-    assert insertion_sort(deepcopy(random_list)) == merge_sort(deepcopy(random_list))
-    assert merge_sort(deepcopy(random_list)) == quick_sort(deepcopy(random_list))
-    assert quick_sort(deepcopy(random_list)) == radix_sort(deepcopy(random_list))
-    assert radix_sort(deepcopy(random_list)) == tim_sort(deepcopy(random_list))
-    # print(bubble_sort(deepcopy(random_list)))
-    # print(selection_sort(deepcopy(random_list)))
-    # print(insertion_sort(deepcopy(random_list)))
-    # print(merge_sort(deepcopy(random_list)))
-    # print(quick_sort(deepcopy(random_list)))
-    # print(radix_sort(deepcopy(random_list)))
-    # print(tim_sort(deepcopy(random_list)))
+    assert bubble_result == selection_result == insertion_result
+    assert insertion_result == merge_result == quick_result
+    assert quick_result == radix_result == tim_result

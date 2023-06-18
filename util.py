@@ -10,6 +10,18 @@ def get_repeated_list(WIDTH: int)->list:
     repeated_value = randint(0,WIDTH)
     return [repeated_value for _ in range(WIDTH)]
 
+
+def merge(left :list, *args)->list:
+    if len(args) < 1:  return left
+
+    merged, right = [], args[0]
+    if len(args) > 1: return merge(merge(left, right), *args[1:])
+    
+    while left and right:
+        merged.append(left.pop(0)) if left[0] < right[0] else merged.append(right.pop(0))
+    return [*merged, *right, *left]
+
+
 def timeit(func):
     @wraps(func)
     def timeit_wrapper(*args, **kwargs):
