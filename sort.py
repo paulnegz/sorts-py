@@ -27,14 +27,15 @@ def selection_sort(unordered_list :list)->list:
 
 @timeit
 def insertion_sort(unordered_list :list)->list:
-    def insertion_sort_rec(unordered_list :list)->list:
-        for index in range(1,len(unordered_list)):
-            behind=index-1
-            while behind>=0 and unordered_list[behind] > unordered_list[behind+1]:
-                unordered_list[behind], unordered_list[behind+1] = unordered_list[behind+1], unordered_list[behind]
-                behind-=1
-        return unordered_list
     return insertion_sort_rec(unordered_list)
+
+def insertion_sort_rec(unordered_list :list)->list:
+    for index in range(1,len(unordered_list)):
+        behind=index-1
+        while behind>=0 and unordered_list[behind] > unordered_list[behind+1]:
+            unordered_list[behind], unordered_list[behind+1] = unordered_list[behind+1], unordered_list[behind]
+            behind-=1
+    return unordered_list
 
 
 @timeit
@@ -64,8 +65,7 @@ def merge(left :list, *args)->list:
 @timeit
 def quick_sort(unordered_list :list)->list:
     def quick_sort_rec(unordered_list :list)->list:
-        if len(unordered_list)<=1:
-            return unordered_list
+        if len(unordered_list)<=1: return unordered_list
         
         pivot = unordered_list.pop(0)
         is_bigger = lambda x: x>pivot
@@ -94,21 +94,12 @@ def tim_sort(unordered_list :list)->list:
     run_size = 64
     if len(unordered_list)<run_size:
         run_size=len(unordered_list)
-
     run_index = len(unordered_list) // run_size
     bucket_outter=[[] for _ in range(run_index+1)]
     for index, item in enumerate(unordered_list):
         bucket_outter[index//run_size].append(item)
         
-    def insertion_tim_sort(unordered_list :list)->list:
-        for card_index in range(1,len(unordered_list)):
-            behind_index=card_index-1
-            while behind_index>=0 and unordered_list[behind_index] > unordered_list[behind_index+1]:
-                unordered_list[behind_index+1], unordered_list[behind_index] =  unordered_list[behind_index], unordered_list[behind_index+1]
-                behind_index-=1
-        return unordered_list   
-
-    bucket = list(map(lambda inner_bucket: insertion_tim_sort(inner_bucket), bucket_outter))
+    bucket = list(map(lambda inner_bucket: insertion_sort_rec(inner_bucket), bucket_outter))
     return merge(*bucket) 
 
 
