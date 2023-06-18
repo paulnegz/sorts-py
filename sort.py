@@ -44,7 +44,7 @@ def merge_sort(unordered_list :list)->list:
         length = len(unordered_list)
         if length <= 1: return unordered_list
         
-        mid = length //2
+        mid = length//2
         left = merge_sort_rec(unordered_list[:mid])
         right = merge_sort_rec(unordered_list[mid:])
         return merge(left,right)
