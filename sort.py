@@ -51,17 +51,18 @@ def insertionSort(unorderedList :list)->list:
 
 @timeit
 def mergeSort(unorderedList :list)->list:
-    result = mergeSortRec(unorderedList)
-    return result
+    def mergeSortRec(unorderedList :list)->list:
+        length = len(unorderedList)
+        if length <= 1:
+            return unorderedList
+        mid = length //2
+        left = mergeSortRec(unorderedList[:mid])
+        right = mergeSortRec(unorderedList[mid:])
+        return merge(left,right)
 
-def mergeSortRec(unorderedList :list)->list:
-    length = len(unorderedList)
-    if length <= 1:
-        return unorderedList
-    mid = length //2
-    left = mergeSortRec(unorderedList[:mid])
-    right = mergeSortRec(unorderedList[mid:])
-    return merge(left,right)
+    return mergeSortRec(unorderedList)
+
+
 
 
 def merge(left :list, *args)->list:
@@ -76,27 +77,24 @@ def merge(left :list, *args)->list:
 
 @timeit
 def quickSort(unorderedList :list)->list:
-    result = quickSortRec(unorderedList)
-    return result
+    def quickSortRec(unorderedList :list)->list:
+        if len(unorderedList)<=1:
+            return unorderedList
+        pivot = unorderedList.pop(0)
+        is_positive = lambda x: x>pivot
+        leftList = [x for x in unorderedList if not is_positive(x)]
+        rightList = [x for x in unorderedList if is_positive(x)]
 
-def quickSortRec(unorderedList :list)->list:
-    if len(unorderedList)<=1:
-        return unorderedList
-    pivot = unorderedList.pop(0)
-    is_positive = lambda x: x>pivot
-    leftList = [x for x in unorderedList if not is_positive(x)]
-    rightList = [x for x in unorderedList if is_positive(x)]
-
-    left = quickSortRec(leftList)
-    right = quickSortRec(rightList)
-    return [*left, pivot, *right]
+        left = quickSortRec(leftList)
+        right = quickSortRec(rightList)
+        return [*left, pivot, *right]
+    return quickSortRec(unorderedList)
 
 
 @timeit
 def radixSort(unorderedList :list)->list:
-    base=10
-    max_length=len(str(max(unorderedList)))
-    n=0
+    n, base = 0, 10
+    max_length = len(str(max(unorderedList)))
     while n<=max_length:
         bucket=[[] for _ in range(base)]
         for item in unorderedList:
