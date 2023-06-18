@@ -1,6 +1,5 @@
 from copy import deepcopy
 from functools import reduce
-import logging
 from util import timeit, get_random_list
 
 
@@ -110,8 +109,6 @@ if __name__ == "__main__":
     WIDTH = 4000
     random_list = get_random_list(WIDTH)
     print(f"Sorting list with {WIDTH} elements...")
-    logging.info(f"random_list: \t{random_list}")
-    logging.info("========================"*4)
     bubble_sort(deepcopy(random_list))
     selection_sort(deepcopy(random_list))
     insertion_sort(deepcopy(random_list))
