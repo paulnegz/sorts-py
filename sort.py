@@ -16,6 +16,7 @@ def bubble_sort(unordered_list :list)->list:
             break
     return unordered_list
 
+
 @timeit
 def selection_sort(unordered_list :list)->list:
     for index_y in range(len(unordered_list)):
@@ -26,6 +27,7 @@ def selection_sort(unordered_list :list)->list:
         unordered_list[min_index], unordered_list[index_y] = unordered_list[index_y], unordered_list[min_index]
     return unordered_list
 
+
 @timeit
 def insertion_sort(unordered_list :list)->list:
     for index in range(1,len(unordered_list)):
@@ -34,6 +36,7 @@ def insertion_sort(unordered_list :list)->list:
             unordered_list[behind], unordered_list[behind+1] = unordered_list[behind+1], unordered_list[behind]
             behind-=1
     return unordered_list
+
 
 @timeit
 def merge_sort(unordered_list :list)->list:
@@ -104,6 +107,7 @@ def tim_sort(unordered_list :list)->list:
                 unordered_list[behind_index+1], unordered_list[behind_index] =  unordered_list[behind_index], unordered_list[behind_index+1]
                 behind_index-=1
         return unordered_list   
+
     bucket = list(map(lambda inner_bucket: insertion_tim_sort(inner_bucket), bucket_outter))
     return merge(*bucket) 
 
