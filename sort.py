@@ -28,12 +28,14 @@ def selection_sort(unordered_list :list)->list:
 
 @timeit
 def insertion_sort(unordered_list :list)->list:
-    for index in range(1,len(unordered_list)):
-        behind=index-1
-        while behind>=0 and unordered_list[behind] > unordered_list[behind+1]:
-            unordered_list[behind], unordered_list[behind+1] = unordered_list[behind+1], unordered_list[behind]
-            behind-=1
-    return unordered_list
+    def insertion_sort_rec(unordered_list :list)->list:
+        for index in range(1,len(unordered_list)):
+            behind=index-1
+            while behind>=0 and unordered_list[behind] > unordered_list[behind+1]:
+                unordered_list[behind], unordered_list[behind+1] = unordered_list[behind+1], unordered_list[behind]
+                behind-=1
+        return unordered_list
+    return insertion_sort_rec(unordered_list)
 
 
 @timeit
