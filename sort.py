@@ -20,8 +20,7 @@ def selection_sort(unordered_list :list)->list:
     for index_y in range(len(unordered_list)):
         min_index = index_y
         for index in range(index_y,len(unordered_list)):
-            if unordered_list[index] < unordered_list[min_index]:
-                min_index = index
+            if unordered_list[index] < unordered_list[min_index]: min_index = index
         unordered_list[min_index], unordered_list[index_y] = unordered_list[index_y], unordered_list[min_index]
     return unordered_list
 
@@ -88,6 +87,7 @@ def radix_sort(unordered_list :list)->list:
         n+=1
         unordered_list = reduce(lambda acc, current: acc+current, bucket)
     return unordered_list
+
 
 @timeit
 def tim_sort(unordered_list :list)->list:
