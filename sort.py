@@ -97,16 +97,16 @@ def tim_sort(unordered_list :list)->list:
     for index, item in enumerate(unordered_list):
         bucket[index//run_size].append(item)
     bucket = list(map(lambda inner_bucket: insertion_tim_sort(inner_bucket), bucket))
-    return merge(*bucket)
-
-
-def insertion_tim_sort(unordered_list :list)->list:
-    for card_index in range(1,len(unordered_list)):
-        behind_index=card_index-1
-        while behind_index>=0 and unordered_list[behind_index] > unordered_list[behind_index+1]:
-            unordered_list[behind_index+1], unordered_list[behind_index] =  unordered_list[behind_index], unordered_list[behind_index+1]
-            behind_index-=1
-    return unordered_list
+    result = merge(*bucket) 
+    
+    def insertion_tim_sort(unordered_list :list)->list:
+        for card_index in range(1,len(unordered_list)):
+            behind_index=card_index-1
+            while behind_index>=0 and unordered_list[behind_index] > unordered_list[behind_index+1]:
+                unordered_list[behind_index+1], unordered_list[behind_index] =  unordered_list[behind_index], unordered_list[behind_index+1]
+                behind_index-=1
+        return unordered_list    
+    return result
 
 
 @timeit
