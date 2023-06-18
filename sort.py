@@ -53,16 +53,13 @@ def insertionSort(unorderedList :list)->list:
 def mergeSort(unorderedList :list)->list:
     def mergeSortRec(unorderedList :list)->list:
         length = len(unorderedList)
-        if length <= 1:
-            return unorderedList
+        if length <= 1: return unorderedList
+        
         mid = length //2
         left = mergeSortRec(unorderedList[:mid])
         right = mergeSortRec(unorderedList[mid:])
         return merge(left,right)
-
     return mergeSortRec(unorderedList)
-
-
 
 
 def merge(left :list, *args)->list:
@@ -70,6 +67,7 @@ def merge(left :list, *args)->list:
 
     merged, right = [], args[0]
     if len(args) > 1: return merge(merge(left, right), *args[1:])
+    
     while len(left) and len(right):
         merged.append(left.pop(0)) if left[0] < right[0] else merged.append(right.pop(0))
     return [*merged, *right, *left]
@@ -80,13 +78,13 @@ def quickSort(unorderedList :list)->list:
     def quickSortRec(unorderedList :list)->list:
         if len(unorderedList)<=1:
             return unorderedList
+        
         pivot = unorderedList.pop(0)
         is_positive = lambda x: x>pivot
         leftList = [x for x in unorderedList if not is_positive(x)]
         rightList = [x for x in unorderedList if is_positive(x)]
 
-        left = quickSortRec(leftList)
-        right = quickSortRec(rightList)
+        left, right = quickSortRec(leftList), quickSortRec(rightList)
         return [*left, pivot, *right]
     return quickSortRec(unorderedList)
 
