@@ -10,10 +10,8 @@ def bubble_sort(unordered_list :list)->list:
         swapped: bool = False
         for x in range(1,len(unordered_list)-(y-1)):
             if unordered_list[x]<unordered_list[x-1]:
-                unordered_list[x], unordered_list[x - 1] = unordered_list[x-1], unordered_list[x]
-                swapped=True
-        if not swapped:
-            break
+                unordered_list[x], unordered_list[x-1], swapped = unordered_list[x-1], unordered_list[x], True
+        if not swapped: break
     return unordered_list
 
 
