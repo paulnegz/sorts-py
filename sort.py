@@ -93,9 +93,9 @@ def tim_sort(unordered_list :list)->list:
         run_size=len(unordered_list)
 
     run_index = len(unordered_list) // run_size
-    bucket=[[] for _ in range(run_index+1)]
+    bucket_outter=[[] for _ in range(run_index+1)]
     for index, item in enumerate(unordered_list):
-        bucket[index//run_size].append(item)
+        bucket_outter[index//run_size].append(item)
         
     def insertion_tim_sort(unordered_list :list)->list:
         for card_index in range(1,len(unordered_list)):
@@ -104,8 +104,8 @@ def tim_sort(unordered_list :list)->list:
                 unordered_list[behind_index+1], unordered_list[behind_index] =  unordered_list[behind_index], unordered_list[behind_index+1]
                 behind_index-=1
         return unordered_list   
-    bucket = map(lambda inner_bucket: insertion_tim_sort(inner_bucket), bucket)
-    return merge(bucket) 
+    bucket = list(map(lambda inner_bucket: insertion_tim_sort(inner_bucket), bucket_outter))
+    return merge(*bucket) 
 
 
 @timeit
@@ -128,11 +128,11 @@ if __name__ == "__main__":
     tim_sort(deepcopy(random_list))
     python_sort(deepcopy(random_list))
 
-    #assert bubble_sort(deepcopy(random_list)) == selection_sort(deepcopy(random_list))
-    #assert insertion_sort(deepcopy(random_list)) == merge_sort(deepcopy(random_list))
-    #assert merge_sort(deepcopy(random_list)) == quick_sort(deepcopy(random_list))
-    #assert quick_sort(deepcopy(random_list)) == radix_sort(deepcopy(random_list))
-    #assert radix_sort(deepcopy(random_list)) == tim_sort(deepcopy(random_list))
+    # assert bubble_sort(deepcopy(random_list)) == selection_sort(deepcopy(random_list))
+    # assert insertion_sort(deepcopy(random_list)) == merge_sort(deepcopy(random_list))
+    # assert merge_sort(deepcopy(random_list)) == quick_sort(deepcopy(random_list))
+    # assert quick_sort(deepcopy(random_list)) == radix_sort(deepcopy(random_list))
+    # assert radix_sort(deepcopy(random_list)) == tim_sort(deepcopy(random_list))
     # print(bubble_sort(deepcopy(random_list)))
     # print(selection_sort(deepcopy(random_list)))
     # print(insertion_sort(deepcopy(random_list)))
