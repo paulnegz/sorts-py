@@ -77,12 +77,11 @@ def quick_sort(unordered_list :list)->list:
 
 @timeit
 def radix_sort(unordered_list :list)->list:
-    n, base, max_length = 0, 10, len(str(max(unordered_list)))
-    while n<=max_length:
+    base, max_length = 10, len(str(max(unordered_list)))
+    for n in range(max_length+1):
         bucket=[[] for _ in range(base)]
         for item in unordered_list:
             bucket[item//base**n %base].append(item)
-        n+=1
         unordered_list = reduce(lambda acc, current: [*acc,*current], bucket)
     return unordered_list
 
