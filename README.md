@@ -2,6 +2,10 @@
 
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/sorts.png)
 
+##### sample output
+
+![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/output.jpg)
+
 
 ### 1. Quick Sort 
 
