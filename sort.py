@@ -120,3 +120,4 @@ if __name__ == "__main__":
     assert bubble_result == selection_result == insertion_result
     assert insertion_result == merge_result == quick_result
     assert quick_result == radix_result == tim_result
+    assert tim_result == heap_result == python_result
