@@ -4,7 +4,7 @@ from heapq import heapify, heappop
 from util import timeit, merge
 
 
-RUN_SIZE = 64
+RUN_SIZE = 128
 
 @timeit
 def quick_sort(unordered_list :list)->list:
