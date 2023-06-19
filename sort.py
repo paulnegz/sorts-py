@@ -1,5 +1,6 @@
 from copy import deepcopy
 from functools import reduce
+from heapq import _heapify_max, _heappop_max
 from util import timeit, get_random_list, merge
 
 
@@ -89,6 +90,15 @@ def tim_sort(unordered_list :list)->list:
 
 
 @timeit
+def heap_sort(random_list: list)->list:
+    _heapify_max(random_list)
+    result = []
+    while random_list:
+        result.insert(0,_heappop_max(random_list))
+    return result
+
+
+@timeit
 def python_sort(random_list: list)->list:
     return sorted(random_list)
 
@@ -104,6 +114,7 @@ if __name__ == "__main__":
     quick_result = quick_sort(deepcopy(random_list))
     radix_result = radix_sort(deepcopy(random_list))
     tim_result = tim_sort(deepcopy(random_list))
+    heap_result = heap_sort(deepcopy(random_list))
     python_result = python_sort(deepcopy(random_list))
 
     assert bubble_result == selection_result == insertion_result
