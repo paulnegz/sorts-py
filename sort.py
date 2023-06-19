@@ -52,7 +52,7 @@ def _tim_sort_recursive(unordered_list :list)->list:
     left = _insertion_sort(unordered_list[:run_size]) 
     if len(unordered_list)<run_size: return left
 
-    right = _tim_sort_new(unordered_list[run_size:])
+    right = _tim_sort_recursive(unordered_list[run_size:])
     return merge(left, right)
 
 
