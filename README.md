@@ -1,6 +1,6 @@
 ## Sorting Algorithms in Python
 
-![alt text](https://github.com/paulnegz/sorts-py/blob/main/sorts.png)
+![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/sorts.png)
 
 ### Quick Sort 
 
