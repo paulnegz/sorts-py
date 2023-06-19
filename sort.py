@@ -1,7 +1,7 @@
+from math import ceil
 from functools import reduce
 from heapq import heapify, heappop
 from util import timeit, merge
-from math import ceil
 
 
 RUN_SIZE = 64
