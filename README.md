@@ -1,4 +1,4 @@
-# Sorting Algorithms in Python
+# 12 Sorting Algorithms in Python
 
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/sorts.png)
 
