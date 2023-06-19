@@ -18,8 +18,8 @@ def merge(left :list, *args)->list:
     if len(args) > 1: return merge(merge(left, right), *args[1:])
     
     while left and right:
-        merged.append(left.pop(0)) if left[0] < right[0] else merged.append(right.pop(0))
-    return [*merged, *right, *left]
+        merged.insert(0, left.pop()) if left[-1] > right[-1] else merged.insert(0, right.pop())
+    return [*right, *left, *merged]
 
 
 def timeit(func):
