@@ -6,29 +6,29 @@ from math import ceil
 
 @timeit
 def quick_sort(unordered_list :list)->list:
-    def quick_sort_rec(unordered_list :list)->list:
+    def _quick_sort(unordered_list :list)->list:
         if len(unordered_list)<=1: return unordered_list
         
         pivot = unordered_list.pop()
         is_bigger = lambda x: x>pivot
         left_list = [x for x in unordered_list if not is_bigger(x)]
         right_list = [x for x in unordered_list if is_bigger(x)]
-        left, right = quick_sort_rec(left_list), quick_sort_rec(right_list)
+        left, right = _quick_sort(left_list), _quick_sort(right_list)
         return [*left, pivot, *right]
-    return quick_sort_rec(unordered_list)
+    return _quick_sort(unordered_list)
 
 
 @timeit
 def merge_sort(unordered_list :list)->list:
-    def merge_sort_rec(unordered_list :list)->list:
+    def _merge_sort(unordered_list :list)->list:
         length = len(unordered_list)
         if length <= 1: return unordered_list
         
         mid = length//2
-        left = merge_sort_rec(unordered_list[:mid])
-        right = merge_sort_rec(unordered_list[mid:])
+        left = _merge_sort(unordered_list[:mid])
+        right = _merge_sort(unordered_list[mid:])
         return merge(left,right)
-    return merge_sort_rec(unordered_list)
+    return _merge_sort(unordered_list)
 
 
 @timeit
@@ -39,20 +39,20 @@ def tim_sort(unordered_list :list)->list:
     for index in range(run_num):
         start, stop = run_size*index, run_size*(index+1) 
         bucket_outter[index]= unordered_list[start:stop]
-    bucket = tuple(map(lambda inner_bucket: insertion_sort_rec(inner_bucket), bucket_outter))
+    bucket = tuple(map(lambda inner_bucket: _insertion_sort(inner_bucket), bucket_outter))
     return merge(*bucket) 
 
 
 @timeit
-def tim_sort_new(unordered_list :list)->list:
-    return tim_sort_new_rec(unordered_list)
+def tim_sort_recursive(unordered_list :list)->list:
+    return _tim_sort_recursive(unordered_list)
 
-def tim_sort_new_rec(unordered_list :list)->list:
+def _tim_sort_recursive(unordered_list :list)->list:
     run_size = 64
-    left = insertion_sort_rec(unordered_list[:run_size]) 
+    left = _insertion_sort(unordered_list[:run_size]) 
     if len(unordered_list)<run_size: return left
 
-    right = tim_sort_new_rec(unordered_list[run_size:])
+    right = _tim_sort_new(unordered_list[run_size:])
     return merge(left, right)
 
 
@@ -78,9 +78,9 @@ def bubble_sort(unordered_list :list)->list:
 
 @timeit
 def insertion_sort(unordered_list :list)->list:
-    return insertion_sort_rec(unordered_list)
+    return _insertion_sort(unordered_list)
 
-def insertion_sort_rec(unordered_list :list)->list:
+def _insertion_sort(unordered_list :list)->list:
     for index in range(1,len(unordered_list)):
         behind=index-1
         while behind>=0 and unordered_list[behind] > unordered_list[behind+1]:
