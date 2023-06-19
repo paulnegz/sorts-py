@@ -7,14 +7,14 @@ if __name__ == "__main__":
     WIDTH = 4000
     random_list = get_random_list(WIDTH)
     print(f"Sorting list with {WIDTH} elements...")
-    bubble_result = bubble_sort(deepcopy(random_list))
-    selection_result = selection_sort(deepcopy(random_list))
-    insertion_result = insertion_sort(deepcopy(random_list))
-    merge_result = merge_sort(deepcopy(random_list))
     quick_result = quick_sort(deepcopy(random_list))
-    radix_result = radix_sort(deepcopy(random_list))
+    merge_result = merge_sort(deepcopy(random_list))
     tim_result = tim_sort(deepcopy(random_list))
     heap_result = heap_sort(deepcopy(random_list))
+    bubble_result = bubble_sort(deepcopy(random_list))
+    insertion_result = insertion_sort(deepcopy(random_list))
+    selection_result = selection_sort(deepcopy(random_list))
+    radix_result = radix_sort(deepcopy(random_list))
     python_result = python_sort(deepcopy(random_list))
 
     assert bubble_result == selection_result == insertion_result
