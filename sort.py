@@ -1,6 +1,6 @@
 from copy import deepcopy
 from functools import reduce
-from heapq import _heapify_max, _heappop_max
+from heapq import heapify, heappop
 from util import timeit, get_random_list, merge
 
 
@@ -91,10 +91,10 @@ def tim_sort(unordered_list :list)->list:
 
 @timeit
 def heap_sort(random_list: list)->list:
-    _heapify_max(random_list)
+    heapify(random_list)
     result = []
     while random_list:
-        result.insert(0,_heappop_max(random_list))
+        result.append(heappop(random_list))
     return result
 
 
