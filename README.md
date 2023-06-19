@@ -6,14 +6,12 @@
 ### Quick Sort 
 
 QuickSort is based on the divide and conquer algorithm that picks an element as a pivot and partitions the given array around the picked pivot. Partitions by placing array elements in the correct position relative to the pivot.
-
 https://github.com/paulnegz/sorts-py/blob/main/sort.py#L7
 
 
 ### Merge Sort
 
 Merge sort works by dividing an array into smaller subarrays. Sorting each subarray, while merging the subarrays back together.
-
 https://github.com/paulnegz/sorts-py/blob/main/sort.py#L21
 
 
@@ -22,7 +20,6 @@ https://github.com/paulnegz/sorts-py/blob/main/sort.py#L21
 Timsort is a hybrid, stable sorting algorithm, derived from merge sort and insertion sort.
 Used in Java’s Arrays.sort(), Python’s sorted() and sort() functions.
 First sort small a run using Insertion Sort, then merges the pieces using a merge of merge sort. Divide the array into blocks known as RUN. Sort those runs using insertion sort and then merge.
-
 https://github.com/paulnegz/sorts-py/blob/main/sort.py#L37
  
 
