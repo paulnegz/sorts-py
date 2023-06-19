@@ -4,6 +4,8 @@ from util import timeit, merge
 from math import ceil
 
 
+RUN_SIZE = 64
+
 @timeit
 def quick_sort(unordered_list :list)->list:
     def _quick_sort(unordered_list :list)->list:
@@ -33,11 +35,10 @@ def merge_sort(unordered_list :list)->list:
 
 @timeit
 def tim_sort(unordered_list :list)->list:
-    run_size = 64
-    run_num = ceil(len(unordered_list)/run_size)
+    run_num = ceil(len(unordered_list)/RUN_SIZE)
     bucket_outter=[[] for _ in range(run_num)]
     for index in range(run_num):
-        start, stop = run_size*index, run_size*(index+1) 
+        start, stop = RUN_SIZE*index, RUN_SIZE*(index+1) 
         bucket_outter[index]= unordered_list[start:stop]
     bucket = tuple(map(lambda inner_bucket: _insertion_sort(inner_bucket), bucket_outter))
     return merge(*bucket) 
@@ -48,11 +49,10 @@ def tim_sort_recursive(unordered_list :list)->list:
     return _tim_sort_recursive(unordered_list)
 
 def _tim_sort_recursive(unordered_list :list)->list:
-    run_size = 64
-    left = _insertion_sort(unordered_list[:run_size]) 
-    if len(unordered_list)<run_size: return left
+    left = _insertion_sort(unordered_list[:RUN_SIZE]) 
+    if len(unordered_list)<RUN_SIZE: return left
 
-    right = _tim_sort_recursive(unordered_list[run_size:])
+    right = _tim_sort_recursive(unordered_list[RUN_SIZE:])
     return merge(left, right)
 
 
