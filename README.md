@@ -34,12 +34,33 @@ https://github.com/paulnegz/sorts-py/blob/main/sort.py#L37
 Bubble sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in the wrong order. This algorithm is not suitable for large data sets as its average and worst-case time complexity is quite high.
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/bubble_sort.gif)
 
+
 ### 6. Insertion Sort
 
 Insertion sort is a simple sorting algorithm that works similar to the way you sort playing cards in your hands. The array is virtually split into a sorted and an unsorted part. Values from the unsorted part are picked and placed at the correct position in the sorted part.
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/insertion_sort.gif)
 
+
 ### 7. Selection Sort
 
 Selection sort is a simple and efficient sorting algorithm that works by repeatedly selecting the smallest (or largest) element from the unsorted portion of the list and moving it to the sorted portion of the list. 
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/selection_sort.gif)
+
+
+### 8. Tree Sort
+
+
+### 9. Shell Sort
+
+
+### 10. Bucket Sort
+
+
+### 11. Radix Sort
+![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/radix_sort.gif)
+
+
+### 12. Counting Sort
+
+
+### 13. Cube Sort
