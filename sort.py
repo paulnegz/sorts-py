@@ -1,6 +1,7 @@
 from functools import reduce
 from heapq import heapify, heappop
 from util import timeit, merge
+from math import ceil
 
 
 @timeit
@@ -32,15 +33,32 @@ def merge_sort(unordered_list :list)->list:
 
 @timeit
 def tim_sort(unordered_list :list)->list:
+    return tim_sort_rec(unordered_list)
+
+def tim_sort_rec(unordered_list :list)->list:
     run_size = 64
     if len(unordered_list)<run_size:
         run_size=len(unordered_list)
-    run_index = len(unordered_list) // run_size
-    bucket_outter=[[] for _ in range(run_index+1)]
-    for index, item in enumerate(unordered_list):
-        bucket_outter[index//run_size].append(item)
+    run_num = ceil(len(unordered_list)/run_size)
+    bucket_outter=[[] for _ in range(run_num)]
+    for index in range(run_num):
+        start, stop = run_size*index, run_size*(index+1) 
+        bucket_outter[index]= unordered_list[start:stop]
     bucket = tuple(map(lambda inner_bucket: insertion_sort_rec(inner_bucket), bucket_outter))
     return merge(*bucket) 
+
+
+@timeit
+def tim_sort_new(unordered_list :list)->list:
+    return tim_sort_rec(unordered_list)
+
+def tim_sort_new_rec(unordered_list :list)->list:
+    run_size = 64
+    left = insertion_sort_rec(unordered_list[:run_size]) 
+    if len(unordered_list)<run_size: return left
+
+    right = tim_sort_new_rec(unordered_list[run_size:])
+    return merge(left, right)
 
 
 @timeit

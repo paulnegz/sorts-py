@@ -6,7 +6,7 @@ from sort import *
 if __name__ == "__main__":
     WIDTH = 4000
     random_list = get_random_list(WIDTH)
-    print(f"Sorting list with {WIDTH} elements...")
+    print(f"Sorting list/array with {WIDTH} elements...")
     quick_result = quick_sort(deepcopy(random_list))
     merge_result = merge_sort(deepcopy(random_list))
     tim_result = tim_sort(deepcopy(random_list))
