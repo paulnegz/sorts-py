@@ -84,7 +84,7 @@ def tim_sort(unordered_list :list)->list:
     bucket_outter=[[] for _ in range(run_index+1)]
     for index, item in enumerate(unordered_list):
         bucket_outter[index//run_size].append(item)
-    bucket = list(map(lambda inner_bucket: insertion_sort_rec(inner_bucket), bucket_outter))
+    bucket = tuple(map(lambda inner_bucket: insertion_sort_rec(inner_bucket), bucket_outter))
     return merge(*bucket) 
 
 
