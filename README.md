@@ -5,13 +5,13 @@
 
 ### Quick Sort 
 
-QuickSort is a sorting algorithm based on the Divide and Conquer algorithm that picks an element as a pivot and partitions the given array around the picked pivot by placing the pivot in its correct position in the sorted array.
+QuickSort is based on the divide and conquer algorithm that picks an element as a pivot and partitions the given array around the picked pivot. Partitions by placing array elements in the correct position relative to the pivot.
  https://github.com/paulnegz/sorts-py/blob/main/sort.py#L7
 
 
 ### Merge Sort
 
-Merge sort is defined as a sorting algorithm that works by dividing an array into smaller subarrays, sorting each subarray, and then merging the sorted subarrays back together to form the final sorted array.
+Merge sort works by dividing an array into smaller subarrays. Sorting each subarray, while merging the subarrays back together.
  https://github.com/paulnegz/sorts-py/blob/main/sort.py#L21
 
 
