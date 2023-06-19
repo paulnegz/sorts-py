@@ -5,7 +5,7 @@
 
 ### Quick Sort 
 
-QuickSort is based on the divide and conquer algorithm that picks an element as a pivot and partitions the given array around the picked pivot. Partitions by placing array elements in the correct position relative to the pivot.
+QuickSort is based on the divide and conquer algorithm that picks an element as a pivot and partitions the given array around the picked pivot. Partitions are made by placing array elements in the correct position relative to the pivot. The pivot is in-place and then partitions have to be sorted
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/quick_sort.gif)
 https://github.com/paulnegz/sorts-py/blob/main/sort.py#L7
 
