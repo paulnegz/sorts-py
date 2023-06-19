@@ -33,9 +33,6 @@ def merge_sort(unordered_list :list)->list:
 
 @timeit
 def tim_sort(unordered_list :list)->list:
-    return tim_sort_rec(unordered_list)
-
-def tim_sort_rec(unordered_list :list)->list:
     run_size = 64
     if len(unordered_list)<run_size:
         run_size=len(unordered_list)
