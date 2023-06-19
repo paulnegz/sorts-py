@@ -32,7 +32,7 @@ https://github.com/paulnegz/sorts-py/blob/main/sort.py#L37
 ### Bubble Sort
 
 Bubble sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in the wrong order. This algorithm is not suitable for large data sets as its average and worst-case time complexity is quite high.
-
+![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/bubble_sort.gif)
 
 ### Selection Sort
 
