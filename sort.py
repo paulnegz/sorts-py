@@ -36,11 +36,11 @@ def merge_sort(unordered_list :list)->list:
 @timeit
 def tim_sort(unordered_list :list)->list:
     run_num = ceil(len(unordered_list)/RUN_SIZE)
-    bucket_outter=[[] for _ in range(run_num)]
+    buckets = [[] for _ in range(run_num)]
     for index in range(run_num):
         start, stop = RUN_SIZE*index, RUN_SIZE*(index+1) 
-        bucket_outter[index]= unordered_list[start:stop]
-    bucket = tuple(map(lambda inner_bucket: _insertion_sort(inner_bucket), bucket_outter))
+        buckets[index] = unordered_list[start:stop]
+    bucket = (_insertion_sort(inner) for inner in buckets)
     return merge(*bucket) 
 
 
