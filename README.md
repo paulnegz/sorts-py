@@ -18,8 +18,8 @@ Merge sort is defined as a sorting algorithm that works by dividing an array int
 ### Tim Sort
 
 Timsort is a hybrid, stable sorting algorithm, derived from merge sort and insertion sort.
-Used in Java’s Arrays.sort() as well as Python’s sorted() and sort().
-First sort small pieces using Insertion Sort, then merges the pieces using a merge of merge sort. Divide the Array into blocks known as Run. We sort those runs using insertion sort and then merge those 
+Used in Java’s Arrays.sort(), Python’s sorted() and sort() functions.
+First sort small a run using Insertion Sort, then merges the pieces using a merge of merge sort. Divide the array into blocks known as RUN. Sort those runs using insertion sort and then merge
  https://github.com/paulnegz/sorts-py/blob/main/sort.py#L37
  
 
