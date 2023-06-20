@@ -104,8 +104,7 @@ def radix_sort(array :list)->list:
     base, max_length = 10, len(str(max(array)))
     for n in range(max_length):
         bucket=[[] for _ in range(base)]
-        for item in array:
-            bucket[item//base**n %base].append(item)
+        for item in array:  bucket[item//base**n %base].append(item)
         array = reduce(lambda acc, current: [*acc,*current], bucket)
     return array
 
