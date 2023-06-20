@@ -13,7 +13,7 @@ Using python standard libraries implememnt, time & rank various sorting algorith
 ### 1. Quick Sort 
 
 
-[Quick Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L10) is based on the divide and conquer algorithm. Pick an element as a pivot and partition the array around the selected pivot. Two partitions are made by placing array elements in the correct position relative to the pivot. The pivot is in-place and then partitions have to be sorted recusively 
+[Quick Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L11) is based on the divide and conquer algorithm. Pick an element as a pivot and partition the array around the selected pivot. Two partitions are made by placing array elements in the correct position relative to the pivot. The pivot is in-place and then partitions have to be sorted recusively 
 
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/quick_sort.gif)
 
@@ -21,7 +21,7 @@ Using python standard libraries implememnt, time & rank various sorting algorith
 ### 2. Merge Sort
 
 
-[Merge Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L23) - works by dividing an array into smaller subarrays. Sorting each subarray, while merging subarrays back together.
+[Merge Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L24) - works by dividing an array into smaller subarrays. Sorting each subarray, while merging subarrays back together.
 
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/merge_sort.gif)
 
@@ -29,7 +29,7 @@ Using python standard libraries implememnt, time & rank various sorting algorith
 ### 3. Tim Sort
 
 [Tim Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L37)
-Timsort is a hybrid, stable sorting algorithm, derived from merge sort and insertion sort. Used in Java’s Arrays.sort(), Python’s sorted() and sort() functions. First sort a small run using Insertion Sort, then merges the pieces using a merge of merge sort. Divide the array into blocks known as RUN. Sort those runs using insertion sort and then merge runs.
+ and [Tim Sort recursive](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L49) are hybrid, stable sorting algorithm, derived from merge sort and insertion sort. Used in Java’s Arrays.sort(), Python’s sorted() and sort() functions. First sort a small run using Insertion Sort, then merges the pieces using a merge of merge sort. Divide the array into blocks known as RUN. Sort those runs using insertion sort and then merge runs.
 
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/tim_sort.png)
  
