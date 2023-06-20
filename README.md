@@ -3,7 +3,7 @@
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/sorts.png)
 
 
-Run, time and rank all sorting algorithms implemented 
+Using python standard libraries implememnt, run, time & rank various sorting algorithms 
 
 #### sample output
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/output.jpg)
@@ -11,21 +11,21 @@ Run, time and rank all sorting algorithms implemented
 
 ### 1. Quick Sort 
 
-QuickSort is based on the divide and conquer algorithm that picks an element as a pivot and partitions the given array around the picked pivot. Partitions are made by placing array elements in the correct position relative to the pivot. The pivot is in-place and then partitions have to be sorted
+QuickSort is based on the divide and conquer algorithm. Pick an element as a pivot and partition the array around the selected pivot. Two partitions are made by placing array elements in the correct position relative to the pivot. The pivot is in-place and then partitions have to be sorted recusively 
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/quick_sort.gif)
 https://github.com/paulnegz/sorts-py/blob/main/sort.py#L7
 
 
 ### 2. Merge Sort
 
-Merge sort works by dividing an array into smaller subarrays. Sorting each subarray, while merging the subarrays back together.
+Merge sort works by dividing an array into smaller subarrays. Sorting each subarray, while merging subarrays back together.
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/merge_sort.gif)
 https://github.com/paulnegz/sorts-py/blob/main/sort.py#L21
 
 
 ### 3. Tim Sort
 
-Timsort is a hybrid, stable sorting algorithm, derived from merge sort and insertion sort. Used in Java’s Arrays.sort(), Python’s sorted() and sort() functions. First sort small a run using Insertion Sort, then merges the pieces using a merge of merge sort. Divide the array into blocks known as RUN. Sort those runs using insertion sort and then merge runs.
+Timsort is a hybrid, stable sorting algorithm, derived from merge sort and insertion sort. Used in Java’s Arrays.sort(), Python’s sorted() and sort() functions. First sort a small run using Insertion Sort, then merges the pieces using a merge of merge sort. Divide the array into blocks known as RUN. Sort those runs using insertion sort and then merge runs.
 
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/tim_sort.png)
 https://github.com/paulnegz/sorts-py/blob/main/sort.py#L37
