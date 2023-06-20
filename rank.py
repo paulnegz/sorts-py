@@ -4,7 +4,6 @@ prefix, race, finished_race = {1:"st",2:"nd",3:"rd"}, [], []
 
 def print_ranking():
     if not finished_race: print("not ranked yet")
-    # print(f"Sorting list/array with {WIDTH} elements...")
     print(f"Comparing {len(finished_race)} algorithms")
     for my_rank in finished_race:
         rank, name, time = my_rank.position, my_rank.name, my_rank.exec_time
@@ -12,23 +11,20 @@ def print_ranking():
 
 class rank_sort:
     def __init__(self, name: str):
-        self.name = name 
-        self.position = None
+        self.name, self.position = name, None 
 
     def __lt__(self, other):
         return self.exec_time < other.exec_time
     
     def __repr__(self) -> str:
-        if not self.position:
-            return f"{self.name} still racing..."
-        return f"{self.name} ranked {self.position}{prefix.get(self.position,'th')}"
+        position, name = self.position, self.name
+        if not position: return f"{name} still racing..."
+        return f"{name} ranked {position}{prefix.get(position,'th')}"
 
 
     def report_time(self, time: float):
         self.exec_time = time
         heappush(race, self)
-
-
     
 
     @staticmethod
