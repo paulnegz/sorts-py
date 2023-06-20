@@ -18,7 +18,7 @@ if __name__ == "__main__":
     radix_result = radix_sort(deepcopy(random_list))
     python_result = python_sort(deepcopy(random_list))
     print("========="*10)
-    print(f"Sorting list/array with {WIDTH} elements...")
+    print(f"Result after sorting list/array with {WIDTH} elements...")
     rank_sort.end_ranking()
 
     assert bubble_result == selection_result == insertion_result
