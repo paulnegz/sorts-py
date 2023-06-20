@@ -2,9 +2,10 @@
 
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/sorts.png)
 
-#### sample output
+
 Run, time and rank all sorting algorithms implemented 
 
+#### sample output
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/output.jpg)
 
 
