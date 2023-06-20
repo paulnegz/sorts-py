@@ -1,7 +1,7 @@
 from functools import wraps
 from time import perf_counter
 from random import randint
-
+from rank import rank_sort
 
 get_ordered_list = lambda WIDTH: [x for x in range(WIDTH)]
 get_random_list = lambda WIDTH: [randint(0,WIDTH) for _ in range(WIDTH)]
@@ -29,6 +29,8 @@ def timeit(func):
         end_time = perf_counter()
         total_time = end_time - start_time
         # print(f'Function {func.__name__}\t{result} took {total_time:.4f} seconds')
+
+        rank_sort(func.__name__).report_time(total_time)
         print(f'{func.__name__}\t took {total_time:.4f} seconds')
         return result
     return timeit_wrapper

@@ -1,4 +1,5 @@
 from util import get_random_list
+from rank import rank_sort
 from copy import deepcopy
 from sort import *
 
@@ -16,6 +17,9 @@ if __name__ == "__main__":
     selection_result = selection_sort(deepcopy(random_list))
     radix_result = radix_sort(deepcopy(random_list))
     python_result = python_sort(deepcopy(random_list))
+    print("========="*10)
+    print(f"Sorting list/array with {WIDTH} elements...")
+    rank_sort.end_ranking()
 
     assert bubble_result == selection_result == insertion_result
     assert insertion_result == merge_result == quick_result
