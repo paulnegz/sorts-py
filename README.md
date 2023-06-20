@@ -12,7 +12,8 @@ Using python standard libraries implememnt, time & rank various sorting algorith
 
 ### 1. Quick Sort 
 
-Quick sort is based on the divide and conquer algorithm. Pick an element as a pivot and partition the array around the selected pivot. Two partitions are made by placing array elements in the correct position relative to the pivot. The pivot is in-place and then partitions have to be sorted recusively 
+
+[Quick Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#10) is based on the divide and conquer algorithm. Pick an element as a pivot and partition the array around the selected pivot. Two partitions are made by placing array elements in the correct position relative to the pivot. The pivot is in-place and then partitions have to be sorted recusively 
 
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/quick_sort.gif)
 https://github.com/paulnegz/sorts-py/blob/main/sort.py#L10
@@ -20,10 +21,10 @@ https://github.com/paulnegz/sorts-py/blob/main/sort.py#L10
 
 ### 2. Merge Sort
 
-Merge sort works by dividing an array into smaller subarrays. Sorting each subarray, while merging subarrays back together.
+
+[Merge Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L23) - works by dividing an array into smaller subarrays. Sorting each subarray, while merging subarrays back together.
 
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/merge_sort.gif)
-[Merge Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L23)
 
 
 ### 3. Tim Sort
