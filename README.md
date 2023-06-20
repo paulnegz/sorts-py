@@ -3,15 +3,17 @@
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/sorts.png)
 
 
-Using python standard libraries implememnt, run, time & rank various sorting algorithms 
+Using python standard libraries implememnt, time & rank various sorting algorithms 
 
 #### sample output
+
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/output.jpg)
 
 
 ### 1. Quick Sort 
 
-QuickSort is based on the divide and conquer algorithm. Pick an element as a pivot and partition the array around the selected pivot. Two partitions are made by placing array elements in the correct position relative to the pivot. The pivot is in-place and then partitions have to be sorted recusively 
+Quick sort is based on the divide and conquer algorithm. Pick an element as a pivot and partition the array around the selected pivot. Two partitions are made by placing array elements in the correct position relative to the pivot. The pivot is in-place and then partitions have to be sorted recusively 
+
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/quick_sort.gif)
 https://github.com/paulnegz/sorts-py/blob/main/sort.py#L7
 
@@ -19,6 +21,7 @@ https://github.com/paulnegz/sorts-py/blob/main/sort.py#L7
 ### 2. Merge Sort
 
 Merge sort works by dividing an array into smaller subarrays. Sorting each subarray, while merging subarrays back together.
+
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/merge_sort.gif)
 https://github.com/paulnegz/sorts-py/blob/main/sort.py#L21
 
@@ -41,18 +44,21 @@ Heap sort is a comparison-based sorting technique based on Binary Heap data stru
 ### 5. Bubble Sort
 
 Bubble sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in the wrong order. This algorithm is not suitable for large data sets as its average and worst-case time complexity is quite high.
+
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/bubble_sort.gif)
 
 
 ### 6. Insertion Sort
 
 Insertion sort is a simple sorting algorithm that works similar to the way you sort playing cards in your hands. The array is virtually split into a sorted and an unsorted part. Values from the unsorted part are picked and placed at the correct position in the sorted part.
+
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/insertion_sort.gif)
 
 
 ### 7. Selection Sort
 
 Selection sort is a simple and efficient sorting algorithm that works by repeatedly selecting the smallest (or largest) element from the unsorted portion of the list and moving it to the sorted portion of the list. 
+
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/selection_sort.gif)
 
 

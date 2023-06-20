@@ -11,22 +11,20 @@ def quick_sort(array :list)->list:
     def _quick_sort(array :list)->list:
         if len(array)<=1: return array
         
-        pivot = array.pop()
-        is_bigger = lambda x: x>pivot
-        left_list = [x for x in array if not is_bigger(x)]
-        right_list = [x for x in array if is_bigger(x)]
-        left, right = _quick_sort(left_list), _quick_sort(right_list)
-        return [*left, pivot, *right]
+        pivot, is_bigger = array.pop(), lambda x: x>pivot
+        left = [x for x in array if not is_bigger(x)]
+        right = [x for x in array if is_bigger(x)]
+        left_sorted, right_sorted = _quick_sort(left), _quick_sort(right)
+        return [*left_sorted, pivot, *right_sorted]
     return _quick_sort(array)
 
 
 @timeit
 def merge_sort(array :list)->list:
     def _merge_sort(array :list)->list:
-        length = len(array)
+        length, mid = len(array), len(array)//2
         if length <= 1: return array
         
-        mid = length//2
         left = _merge_sort(array[:mid])
         right = _merge_sort(array[mid:])
         return merge(left,right)
