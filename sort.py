@@ -102,7 +102,7 @@ def selection_sort(unordered_list :list)->list:
 @timeit
 def radix_sort(unordered_list :list)->list:
     base, max_length = 10, len(str(max(unordered_list)))
-    for n in range(max_length+1):
+    for n in range(max_length):
         bucket=[[] for _ in range(base)]
         for item in unordered_list:
             bucket[item//base**n %base].append(item)
