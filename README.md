@@ -74,7 +74,12 @@ Using python standard libraries implement, time & rank various sorting algorithm
 ### 9. Shell Sort
 
 
+![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/shell_sort.png)
+
 ### 10. Bucket Sort
+
+
+![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/bucket_sort.png)
 
 
 ### 11. Radix Sort
@@ -86,5 +91,7 @@ Using python standard libraries implement, time & rank various sorting algorithm
 
 ### 12. Counting Sort
 
+
+![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/counting_sort.png)
 
 ### 13. Cube Sort
