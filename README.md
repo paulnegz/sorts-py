@@ -51,8 +51,7 @@ Using python standard libraries implement, time & rank various sorting algorithm
 ### 6. Insertion Sort
 
 
-[Insertion Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L81)
-Insertion sort is a simple sorting algorithm that works similar to the way you sort playing cards in your hands. The array is virtually split into a sorted and an unsorted part. Values from the unsorted part are picked and placed at the correct position in the sorted part.
+[Insertion Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L81) is a simple sorting algorithm that works similar to the way you sort playing cards in your hands. The array is virtually split into a sorted and an unsorted part. Values from the unsorted part are picked and placed at the correct position in the sorted part.
 
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/insertion_sort.gif)
 
