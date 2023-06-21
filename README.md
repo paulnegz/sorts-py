@@ -3,7 +3,7 @@
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/sorts.png)
 
 
-Using python standard libraries implememnt, time & rank various sorting algorithms 
+Using python standard libraries implement, time & rank various sorting algorithms 
 
 #### sample output
 
