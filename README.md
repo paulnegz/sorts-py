@@ -73,6 +73,7 @@ Using python standard libraries implement, time & rank various sorting algorithm
 
 ### 9. Shell Sort
 
+[Shell Sort]() is mainly a variation of Insertion Sort. In insertion sort, we move elements only one position ahead. When an element has to be moved far ahead, many movements are involved. The idea of ShellSort is to allow the exchange of far items.
 
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/shell_sort.png)
 
