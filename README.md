@@ -60,8 +60,7 @@ Insertion sort is a simple sorting algorithm that works similar to the way you s
 ### 7. Selection Sort
 
 
-[Selection Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L91)
-Selection sort is a simple and efficient sorting algorithm that works by repeatedly selecting the smallest (or largest) element from the unsorted portion of the list and moving it to the sorted portion of the list. 
+[Selection Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L91) is a simple and efficient sorting algorithm that works by repeatedly selecting the smallest (or largest) element from the unsorted portion of the list and moving it to the sorted portion of the list. 
 
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/selection_sort.gif)
 
@@ -77,8 +76,7 @@ Selection sort is a simple and efficient sorting algorithm that works by repeate
 
 ### 11. Radix Sort
 
-[Radix Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L91)
-Radix Sort algorithm is a stable sorting subroutine-based integer sorting algorithm. It is a sorting algorithm that does not use comparisons to sort a collection of integers. It classifies keys based on individual digits with the same significant position and value.
+[Radix Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L91) is a stable sorting subroutine-based integer sorting algorithm. It is a sorting algorithm that does not use comparisons to sort a collection of integers. It classifies keys based on individual digits with the same significant position and value.
 
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/radix_sort.png)
 
