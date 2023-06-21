@@ -7,7 +7,7 @@ from sort import *
 if __name__ == "__main__":
     WIDTH = 4000
     random_list = get_random_list(WIDTH)
-    print(f"Sorting list/array with {WIDTH} elements...")
+    print(f"Sorting list/array with {WIDTH} items...")
     quick_result = quick_sort(deepcopy(random_list))
     merge_result = merge_sort(deepcopy(random_list))
     tim_result = tim_sort(deepcopy(random_list))
@@ -18,7 +18,7 @@ if __name__ == "__main__":
     radix_result = radix_sort(deepcopy(random_list))
     python_result = python_sort(deepcopy(random_list))
     print("========="*10)
-    print(f"Result after sorting {WIDTH} elements...")
+    print(f"Result after sorting {WIDTH} items...")
     rank_sort.end_ranking()
 
     assert bubble_result == selection_result == insertion_result
