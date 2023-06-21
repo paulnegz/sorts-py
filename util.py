@@ -4,6 +4,7 @@ from random import randint
 from rank import rank_sort
 
 get_ordered_list = lambda WIDTH: [x for x in range(WIDTH)]
+get_reversed_list = lambda WIDTH: [(WIDTH-x) for x in range(WIDTH)]
 get_random_list = lambda WIDTH: [randint(0,WIDTH) for _ in range(WIDTH)]
 
 def get_repeated_list(WIDTH: int)->list:
