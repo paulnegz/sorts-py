@@ -36,13 +36,14 @@ Using python standard libraries implement, time & rank various sorting algorithm
 
 
 ### 4. Heap Sort
-Heap sort is a comparison-based sorting technique based on Binary Heap data structure. It is similar to the selection sort where we first find the minimum element and place the minimum element at the beginning. Repeat the same process for the remaining elements.
+[Heap Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L58)is a comparison-based sorting technique based on Binary Heap data structure. It is similar to the selection sort where we first find the minimum element and place the minimum element at the beginning. Repeat the same process for the remaining elements.
 
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/heap_sort.png)
 
 
 ### 5. Bubble Sort
 
+[Bubble Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L67)
 Bubble sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in the wrong order. This algorithm is not suitable for large data sets as its average and worst-case time complexity is quite high.
 
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/bubble_sort.gif)
@@ -50,6 +51,8 @@ Bubble sort is the simplest sorting algorithm that works by repeatedly swapping 
 
 ### 6. Insertion Sort
 
+
+[Insertion Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L81)
 Insertion sort is a simple sorting algorithm that works similar to the way you sort playing cards in your hands. The array is virtually split into a sorted and an unsorted part. Values from the unsorted part are picked and placed at the correct position in the sorted part.
 
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/insertion_sort.gif)
@@ -57,6 +60,8 @@ Insertion sort is a simple sorting algorithm that works similar to the way you s
 
 ### 7. Selection Sort
 
+
+[Selection Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L91)
 Selection sort is a simple and efficient sorting algorithm that works by repeatedly selecting the smallest (or largest) element from the unsorted portion of the list and moving it to the sorted portion of the list. 
 
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/selection_sort.gif)
@@ -72,6 +77,8 @@ Selection sort is a simple and efficient sorting algorithm that works by repeate
 
 
 ### 11. Radix Sort
+
+[Radix Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L91)
 Radix Sort algorithm is a stable sorting subroutine-based integer sorting algorithm. It is a sorting algorithm that does not use comparisons to sort a collection of integers. It classifies keys based on individual digits with the same significant position and value.
 
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/radix_sort.png)
