@@ -36,15 +36,14 @@ Using python standard libraries implement, time & rank various sorting algorithm
 
 
 ### 4. Heap Sort
-[Heap Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L58)is a comparison-based sorting technique based on Binary Heap data structure. It is similar to the selection sort where we first find the minimum element and place the minimum element at the beginning. Repeat the same process for the remaining elements.
+[Heap Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L58) is a comparison-based sorting technique based on Binary Heap data structure. It is similar to the selection sort where we first find the minimum element and place the minimum element at the beginning. Repeat the same process for the remaining elements.
 
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/heap_sort.png)
 
 
 ### 5. Bubble Sort
 
-[Bubble Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L67)
-Bubble sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in the wrong order. This algorithm is not suitable for large data sets as its average and worst-case time complexity is quite high.
+[Bubble Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L67) is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in the wrong order. This algorithm is not suitable for large data sets as its average and worst-case time complexity is quite high.
 
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/bubble_sort.gif)
 
