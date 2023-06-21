@@ -79,6 +79,7 @@ Using python standard libraries implement, time & rank various sorting algorithm
 
 ### 10. Bucket Sort
 
+[Bucket Sort]() works by distributing the elements into a fixed number of buckets based on their values and then sorting each bucket individually. It is efficient when the input data is uniformly distributed over a range. The algorithm's performance depends on the distribution of the data and the number of buckets used. 
 
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/bucket_sort.png)
 
