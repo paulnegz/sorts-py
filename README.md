@@ -66,7 +66,7 @@ Using python standard libraries implement, time & rank various sorting algorithm
 
 ### 8. Tree Sort
 
-[Tree Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L91) is a sorting algorithm that is based on [Binary Search Tree](https://www.geeksforgeeks.org/binary-search-tree-data-structure/) data structure. It first creates a binary search tree from the elements of the input list or array and then performs an in-order traversal on the created binary search tree to get the elements in sorted order. 
+[Tree Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L91) is a sorting algorithm that is based on [Binary Search Tree]() data structure. It first creates a binary search tree from the elements of the input list or array and then performs an in-order traversal on the created binary search tree to get the elements in sorted order. 
 
 
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/tree_sort.png)
