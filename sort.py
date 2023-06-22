@@ -26,9 +26,9 @@ def merge_sort(array :list)->list:
         length, mid = len(array), len(array)//2
         if length <= 1: return array
         
-        left = _merge_sort(array[:mid])
-        right = _merge_sort(array[mid:])
-        return merge(left,right)
+        left_sub_array = _merge_sort(array[:mid])
+        right_sub_array = _merge_sort(array[mid:])
+        return merge(left_sub_array,right_sub_array)
     return _merge_sort(array)
 
 
