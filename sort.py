@@ -5,6 +5,7 @@ from util import timeit, merge
 
 
 RUN_SIZE = 2**6
+BUCKETS = 2**6
 
 @timeit
 def quick_sort(array :list)->list:
@@ -12,10 +13,10 @@ def quick_sort(array :list)->list:
         if len(array)<=1: return array
         
         pivot, is_bigger = array.pop(), lambda x: x>pivot
-        left = [x for x in array if not is_bigger(x)]
-        right = [x for x in array if is_bigger(x)]
-        left_sorted, right_sorted = _quick_sort(left), _quick_sort(right)
-        return [*left_sorted, pivot, *right_sorted]
+        left_partition = [x for x in array if not is_bigger(x)]
+        right_partition = [x for x in array if is_bigger(x)]
+        left, right = _quick_sort(left_partition), _quick_sort(right_partition)
+        return [*left, pivot, *right]
     return _quick_sort(array)
 
 
