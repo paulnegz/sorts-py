@@ -72,7 +72,7 @@ def bubble_sort(array :list)->list:
             if array[x]<array[x-1]:
                 array[x],array[x-1], swap = array[x-1],array[x], True
         if not swap: break
-    return array
+    return array 
 
 
 @timeit
