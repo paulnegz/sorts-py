@@ -13,7 +13,7 @@ Implement, time & rank various sorting algorithms
 ### 1. Quick Sort 
 
 
-[Quick Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L12) is based on the divide and conquer algorithm. Pick an element as a [pivot](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L15) and partition the array around the selected pivot. Two partitions([left](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L16) & [right](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L17)) are made by placing array elements in the correct position relative to the pivot. The pivot is in-place and then partitions have to be sorted [recusively](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L18) 
+[Quick Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L12) is based on the divide and conquer algorithm. Pick an element as a [pivot](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L15) and partition the array around the selected pivot. Two [partitions](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L17) (left & right) are made by placing array elements in the correct position relative to the pivot. The pivot is in-place and then partitions have to be sorted [recusively](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L18) 
 
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/quick_sort.gif)
 
