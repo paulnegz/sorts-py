@@ -67,11 +67,11 @@ def heap_sort(random_list: list)->list:
 @timeit
 def bubble_sort(array :list)->list:
     for y in range(1, len(array)):
-        swapped: bool = False
+        swap: bool = False
         for x in range(1,len(array)-(y-1)):
             if array[x]<array[x-1]:
-                array[x], array[x-1], swapped = array[x-1], array[x], True
-        if not swapped: break
+                array[x],array[x-1], swap = array[x-1],array[x], True
+        if not swap: break
     return array
 
 
