@@ -13,10 +13,9 @@ def quick_sort(array :list)->list:
         if len(array)<=1: return array
         
         pivot, is_bigger = array.pop(), lambda x: x>pivot
-        left_partition = [x for x in array if not is_bigger(x)]
-        right_partition = [x for x in array if is_bigger(x)]
-        left, right = _quick_sort(left_partition), _quick_sort(right_partition)
-        return [*left, pivot, *right]
+        left_partition = _quick_sort([x for x in array if not is_bigger(x)])
+        right_partition = _quick_sort([x for x in array if is_bigger(x)])
+        return [*left_partition, pivot, *right_partition]
     return _quick_sort(array)
 
 
@@ -90,11 +89,11 @@ def _insertion_sort(array :list)->list:
 
 @timeit
 def selection_sort(array :list)->list:
-    for index_y, _ in enumerate(array):
-        min_index = index_y
-        for index in range(index_y,len(array)):
-            if array[index] < array[min_index]: min_index = index
-        array[min_index], array[index_y] = array[index_y], array[min_index]
+    for idx_y, _ in enumerate(array):
+        min_idx = idx_y
+        for idx in range(idx_y,len(array)):
+            if array[idx] < array[min_idx]: min_idx = idx
+        array[min_idx], array[idx_y] = array[idx_y], array[min_idx]
     return array
 
 
