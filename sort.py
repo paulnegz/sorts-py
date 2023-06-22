@@ -81,10 +81,10 @@ def insertion_sort(array :list)->list:
 
 def _insertion_sort(array :list)->list:
     for index in range(1,len(array)):
-        behind=index-1
-        while behind>=0 and array[behind] > array[behind+1]:
-            array[behind], array[behind+1] = array[behind+1], array[behind]
-            behind-=1
+        back=index-1
+        while back>=0 and array[back] > array[back+1]:
+            array[back], array[back+1] = array[back+1], array[back]
+            back-=1
     return array
 
 
