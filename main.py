@@ -15,6 +15,7 @@ if __name__ == "__main__":
     bubble_result = bubble_sort(deepcopy(random_list))
     insertion_result = insertion_sort(deepcopy(random_list))
     selection_result = selection_sort(deepcopy(random_list))
+    tree_result = tree_sort(deepcopy(random_list))
     radix_result = radix_sort(deepcopy(random_list))
     python_result = python_sort(deepcopy(random_list))
     print("========="*10)
@@ -25,3 +26,4 @@ if __name__ == "__main__":
     assert insertion_result == merge_result == quick_result
     assert quick_result == radix_result == tim_result
     assert tim_result == heap_result == python_result
+    assert tree_result == heap_result == python_result

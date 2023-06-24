@@ -2,6 +2,7 @@ from math import ceil
 from functools import reduce
 from heapq import heapify, heappop
 from util import timeit, merge
+from ADT import BST
 
 
 RUN_SIZE = 2**6
@@ -96,6 +97,13 @@ def selection_sort(array :list)->list:
         array[min_idx], array[idx_y] = array[idx_y], array[min_idx]
     return array
 
+
+@timeit
+def tree_sort(array: list)->list:
+    bst = BST().create_tree(array)
+    result = bst.inorder()
+    return result
+ 
 
 @timeit
 def radix_sort(array :list)->list:
