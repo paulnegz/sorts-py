@@ -5,7 +5,6 @@ from ADT import BST
 from itertools import accumulate
 from collections import Counter
 
-
 RUN_SIZE = 2**6
 
 
@@ -146,19 +145,19 @@ def bucket_sort(array :list)->list:
     return flat_map(bucket)
 
 
-
 @timeit
 def counting_sort(array :list)->list:
     count, result = [0 for _ in range(max(array)+1)], array[:]
     for key, val in Counter(array).items(): count[key] = val
     count = list(accumulate(count))
-
     for num in array:
-        result[count[num]-1] = num
-        count[num] -= 1
+        result[count[num]-1], count[num] = num, count[num]-1
     return result
 
 
 @timeit
+def cube_sort(array :list)->list:
+    return array
+
 def python_sort(random_list: list)->list:
     return sorted(random_list)
