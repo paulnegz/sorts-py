@@ -111,7 +111,7 @@ For example: if the count of element 3 is 2 then, 2 is stored in the 3rd positio
 
 5. Find the index of each element of the original array in the count array. This gives the cumulative count. Place the element at the index calculated as shown in figure below.
 
-![alt text]()
+![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/count_sort4.jpg)
 
 6. After placing each element at its correct position, decrease its count by one.
 
