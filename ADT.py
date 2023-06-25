@@ -44,3 +44,15 @@ class BST:
         acc.append(current.value)
         if current.right: self._inorder(current.right, acc)
         return acc
+
+    def _preorder(self, current: BNode, acc: list):
+        acc.append(current.value)
+        if current.left: self._preorder(current.left, acc)
+        if current.right: self._preorder(current.right, acc)
+        return acc
+
+    def _postorder(self, current: BNode, acc: list):
+        if current.left: self._postorder(current.left, acc)
+        if current.right: self._postorder(current.right, acc)
+        acc.append(current.value)
+        return acc

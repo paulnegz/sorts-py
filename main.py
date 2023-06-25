@@ -20,7 +20,7 @@ if __name__ == "__main__":
     shell_result = shell_sort(deepcopy(random_list))
     bucket_result = bucket_sort(deepcopy(random_list))
     radix_result = radix_sort(deepcopy(random_list))
-    # counting_result = counting_sort(deepcopy(random_list))
+    counting_result = counting_sort(deepcopy(random_list))
     # counting_result = counting_sort(deepcopy(random_list))
     python_result = python_sort(deepcopy(random_list))
     print("========="*10)

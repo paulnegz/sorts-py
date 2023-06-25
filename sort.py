@@ -2,6 +2,8 @@ from math import ceil
 from heapq import heapify, heappop
 from util import timeit, merge, flat_map
 from ADT import BST
+from itertools import accumulate
+from collections import Counter
 
 
 RUN_SIZE = 2**6
@@ -110,14 +112,12 @@ def shell_sort(array: list)->list:
 def _shell_sort(array: list)->list:
     LENGTH, gap= len(array), len(array)//2
     while gap>0:
-        j=gap
-        while j<LENGTH:
+        for j in range(gap, LENGTH):
             i=j-gap 
             while i>=0:
                 if array[i+gap]>array[i]: break
                 else: array[i+gap],array[i]=array[i],array[i+gap]
                 i=i-gap 
-            j+=1
         gap=gap//2
     return array
 
@@ -144,6 +144,19 @@ def bucket_sort(array :list)->list:
     for num in array: bucket[get_idx(num)].append(num)
     for x in bucket: _insertion_sort(x)
     return flat_map(bucket)
+
+
+
+@timeit
+def counting_sort(array :list)->list:
+    count, result = [0 for _ in range(max(array)+1)], array[:]
+    for key, val in Counter(array).items(): count[key] = val
+    count = list(accumulate(count))
+
+    for num in array:
+        result[count[num]-1] = num
+        count[num] -= 1
+    return result
 
 
 @timeit
