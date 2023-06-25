@@ -7,6 +7,7 @@ from collections import Counter
 
 RUN_SIZE = 2**6
 
+
 @timeit
 def quick_sort(array :list)->list:
     def _quick_sort(array :list)->list:
