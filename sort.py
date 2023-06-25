@@ -6,7 +6,7 @@ from ADT import BST
 
 
 RUN_SIZE = 2**6
-BUCKETS = 2**6
+
 
 @timeit
 def quick_sort(array :list)->list:
@@ -38,9 +38,8 @@ def tim_sort(array :list)->list:
     buckets = [[] for _ in range(run_num)]
     for index in range(run_num):
         start, stop = RUN_SIZE*index, RUN_SIZE*(index+1) 
-        buckets[index] = array[start:stop]
-    bucket = (_insertion_sort(inner) for inner in buckets)
-    return merge(*bucket) 
+        buckets[index] = _insertion_sort(array[start:stop])
+    return merge(*buckets) 
 
 
 @timeit
@@ -106,6 +105,25 @@ def tree_sort(array: list)->list:
  
 
 @timeit
+def shell_sort(array: list)->list:
+    return _shell_sort(array)
+
+def _shell_sort(array: list)->list:
+    LENGTH, gap= len(array), len(array)//2
+    while gap>0:
+        j=gap
+        while j<LENGTH:
+            i=j-gap 
+            while i>=0:
+                if array[i+gap]>array[i]: break
+                else: array[i+gap],array[i]=array[i],array[i+gap]
+                i=i-gap 
+            j+=1
+        gap=gap//2
+    return array
+
+
+@timeit
 def radix_sort(array :list)->list:
     base, max_length = 10, len(str(max(array)))
     for n in range(max_length):
@@ -113,6 +131,18 @@ def radix_sort(array :list)->list:
         for item in array: bucket[item//base**n%base].append(item)
         array = reduce(lambda acc, current: [*acc,*current], bucket)
     return array
+
+
+@timeit
+def bucket_sort(array :list)->list:
+    min_val, max_val = min(array), max(array)
+    BUCKET_SIZE = ceil(len(array)**(3/4))
+    RANGE = (max_val-min_val+1)/BUCKET_SIZE
+    bucket = [[] for _ in range(BUCKET_SIZE)]
+    for num in array:
+        bucket[int((num-min_val)/RANGE)].append(num)
+    for x in bucket: _insertion_sort(x)
+    return reduce(lambda acc, curr: [*acc,*curr], bucket)
 
 
 @timeit

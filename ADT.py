@@ -7,25 +7,9 @@ class BNode:
         return self.value > other.value
     
     def __str__(self):
-        val, left, right = self.value, self.left, self.right
-        if left: left = left.value
-        if right: right = right.value 
+        val, node_value = self.value, lambda x: x.value if x else "NA"
+        left, right = node_value(self.left), node_value(self.right)
         return f"(BNode: value={val}, left={left}, right={right})"
-
-
-def add_rec(current: BNode, value:BNode):
-    if value > current:
-        if not current.right: current.right = value
-        else: add_rec(current.right, value)
-    else: 
-        if not current.left: current.left = value
-        else: add_rec(current.left, value)
-
-def inorder_rec(current: BNode, acc: list):
-    if current.left: inorder_rec(current.left, acc)
-    acc.append(current.value)
-    if current.right: inorder_rec(current.right, acc)
-    return acc
 
 
 class BST:
@@ -34,7 +18,7 @@ class BST:
 
     def add(self, value):
         value, head = BNode(value), self.head
-        if head: add_rec(head, value) 
+        if head: self._add(head, value) 
         else: self.head = value
         return self
     
@@ -45,4 +29,18 @@ class BST:
     def inorder(self)->list:
         result = []
         if not self.head: return result
-        return inorder_rec(self.head, result)
+        return self._inorder(self.head, result)
+    
+    def _add(self, current: BNode, value:BNode):
+        if value > current:
+            if not current.right: current.right = value
+            else: self._add(current.right, value)
+        else: 
+            if not current.left: current.left = value
+            else: self._add(current.left, value)
+
+    def _inorder(self, current: BNode, acc: list):
+        if current.left: self._inorder(current.left, acc)
+        acc.append(current.value)
+        if current.right: self._inorder(current.right, acc)
+        return acc
