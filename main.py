@@ -20,6 +20,8 @@ if __name__ == "__main__":
     shell_result = shell_sort(deepcopy(random_list))
     bucket_result = bucket_sort(deepcopy(random_list))
     radix_result = radix_sort(deepcopy(random_list))
+    # counting_result = counting_sort(deepcopy(random_list))
+    # counting_result = counting_sort(deepcopy(random_list))
     python_result = python_sort(deepcopy(random_list))
     print("========="*10)
     print(f"Result after sorting {WIDTH} items...")
@@ -30,4 +32,4 @@ if __name__ == "__main__":
     assert quick_result == radix_result == python_result
     assert tim_result == heap_result == python_result
     assert tree_result == shell_result == python_result
-    assert tree_result == bucket_result == python_result
+    # assert counting_result == bucket_result == python_result

@@ -1,4 +1,4 @@
-from functools import wraps
+from functools import wraps, reduce
 from time import perf_counter
 from random import randint
 from rank import rank_sort
@@ -6,6 +6,7 @@ from rank import rank_sort
 get_ordered_list = lambda WIDTH: [x for x in range(WIDTH)]
 get_reversed_list = lambda WIDTH: [(WIDTH-x) for x in range(WIDTH)]
 get_random_list = lambda WIDTH: [randint(0,WIDTH) for _ in range(WIDTH)]
+flat_map = lambda arr: reduce(lambda acc, curr: [*acc,*curr], arr)
 
 def get_repeated_list(WIDTH: int)->list:
     repeated_value = randint(0,WIDTH)

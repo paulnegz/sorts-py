@@ -1,7 +1,6 @@
 from math import ceil
-from functools import reduce
 from heapq import heapify, heappop
-from util import timeit, merge
+from util import timeit, merge, flat_map
 from ADT import BST
 
 
@@ -129,7 +128,7 @@ def radix_sort(array :list)->list:
     for n in range(max_length):
         bucket=[[] for _ in range(base)]
         for item in array: bucket[item//base**n%base].append(item)
-        array = reduce(lambda acc, current: [*acc,*current], bucket)
+        array = flat_map(bucket)
     return array
 
 
@@ -141,10 +140,10 @@ def bucket_sort(array :list)->list:
     RANGE = (max_val-min_val+1)/BUCKET_SIZE
     bucket = [[] for _ in range(BUCKET_SIZE)]
     
-    get_index = lambda num: int((num-min_val)/RANGE)
-    for num in array: bucket[get_index(num)].append(num)
+    get_idx = lambda num: int((num-min_val)/RANGE)
+    for num in array: bucket[get_idx(num)].append(num)
     for x in bucket: _insertion_sort(x)
-    return reduce(lambda acc, cur: [*acc,*cur], bucket)
+    return flat_map(bucket)
 
 
 @timeit
