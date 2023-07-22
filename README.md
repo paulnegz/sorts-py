@@ -21,7 +21,7 @@ Implement, time & rank various sorting algorithms
 ### 2. Merge Sort
 
 
-[Merge Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L25) - works by dividing an array into smaller [subarrays](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L29) (left & right). Repeat dividing the array till subarrays contains a single element. Sorting each subarray, while [merging](https://github.com/paulnegz/sorts-py/blob/main/util.py#L15) subarrays back together.
+[Merge Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L25) - works by dividing an array into smaller [subarrays](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L29) (left & right). Repeat dividing the array till subarrays contains a single element. Sorting each subarray, while [merging](https://github.com/paulnegz/sorts-py/blob/main/util.py#L16) subarrays back together.
 
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/merge_sort.gif)
 
