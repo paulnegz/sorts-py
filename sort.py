@@ -140,8 +140,7 @@ def bucket_sort(array :list)->list:
     get_idx = lambda num: int((num-min_val)/RANGE)
     for num in array: 
         bucket[get_idx(num)].append(num)
-    for x in bucket: 
-        _insertion_sort(x)
+    for x in bucket: _insertion_sort(x)
     return flat_map(bucket)
 
 
