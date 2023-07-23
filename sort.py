@@ -147,7 +147,8 @@ def bucket_sort(array :list)->list:
 @timeit
 def counting_sort(array :list)->list:
     count, result = [0 for _ in range(max(array)+1)], array[:]
-    for key, val in Counter(array).items(): count[key] = val
+    for key, val in Counter(array).items(): 
+        count[key] = val
     count = list(accumulate(count))
     for num in array:
         result[count[num]-1], count[num] = num, count[num]-1
