@@ -36,7 +36,7 @@ Implement, time & rank various sorting algorithms
 
 
 ### 4. Heap Sort
-[Heap Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L59) is a comparison-based sorting technique based on Binary Heap data structure. It is similar to the selection sort where we first find the minimum element and place the minimum element at the beginning. Repeat the same process for the remaining elements.
+[Heap Sort](https://github.com/paulnegz/sorts-py/blob/main/sort.py#L58) is a comparison-based sorting technique based on Binary Heap data structure. It is similar to the selection sort where we first find the minimum element and place the minimum element at the beginning. Repeat the same process for the remaining elements.
 
 ![alt text](https://github.com/paulnegz/sorts-py/blob/main/img/heap_sort.png)
 
