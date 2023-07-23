@@ -28,9 +28,7 @@ if __name__ == "__main__":
     rank_sort.end_ranking()
 
     assert bubble_result == selection_result == python_result
-    assert insertion_result == merge_result == python_result
-    assert quick_result == radix_result == python_result
-    assert tim_result == heap_result == python_result
+    assert insertion_result == merge_result == bucket_result
+    assert quick_result == radix_result == counting_result
+    assert tim_result == heap_result == cube_result
     assert tree_result == shell_result == python_result
-    assert counting_result == bucket_result == python_result
-    assert cube_result == bucket_result == python_result
