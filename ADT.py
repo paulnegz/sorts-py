@@ -16,21 +16,16 @@ class BST:
     def __init__(self) -> None:
         self.head: BNode|None = None
 
+    def create_tree(self, array: list):
+        for x in array: self.add(x)
+        return self 
+
     def add(self, value):
         value, head = BNode(value), self.head
         if head: self._add(head, value) 
         else: self.head = value
         return self
-    
-    def create_tree(self, array: list):
-        for x in array: self.add(x)
-        return self 
-    
-    def inorder(self)->list:
-        result = []
-        if not self.head: return result
-        return self._inorder(self.head, result)
-    
+
     def _add(self, current: BNode, value:BNode):
         if value > current:
             if not current.right: current.right = value
@@ -38,7 +33,12 @@ class BST:
         else: 
             if not current.left: current.left = value
             else: self._add(current.left, value)
-
+                
+    def inorder(self)->list:
+        result = []
+        if not self.head: return result
+        return self._inorder(self.head, result)
+    
     def _inorder(self, current: BNode, acc: list):
         if current.left: self._inorder(current.left, acc)
         acc.append(current.value)
